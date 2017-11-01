@@ -59,7 +59,10 @@
         <p-column field="color" header="Color" [style]="{'width':'250px'}"></p-column>
     </p-dataTable>
     
-    <p-dataTable [value]="cars" [frozenValue]="frozenCars" scrollable="true" scrollHeight="200px" frozenWidth="200px" unfrozenWidth="600px" [style]="{'margin-top':'30px'}">
+    <button type="button" pButton icon="fa-file-o" iconPos="left" label="All Data" (click)="dt.exportCSV()" style="float:left"></button>
+    <br /><br />
+    
+    <p-dataTable #dt [value]="cars" [frozenValue]="frozenCars" scrollable="true" scrollHeight="200px" frozenWidth="200px" unfrozenWidth="600px" [style]="{'margin-top':'30px'}">
         <p-header>Frozen Rows and Columns</p-header>
         <p-column field="vin" header="Vin" [style]="{'width':'200px'}" frozen="true"></p-column>
         <p-column field="year" header="Year" [style]="{'width':'250px'}"></p-column>

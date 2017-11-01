@@ -9,7 +9,10 @@
 </div>
 
 <div class="content-section implementation">
-    <p-dataTable [value]="cars1" sortField="brand" rowGroupMode="subheader" groupField="brand" expandableRowGroups="true"
+
+        <button type="button" pButton icon="fa-file-o" iconPos="left" label="All Data" (click)="dt.exportCSV()" style="float:left"></button>
+<br /><br /><br />
+    <p-dataTable #dt [value]="cars1" sortField="brand" rowGroupMode="subheader" groupField="brand" expandableRowGroups="true"
             [sortableRowGroup]="false">
         <p-header>Toggleable Row Groups with Footers</p-header>
         <ng-template pTemplate="rowgroupheader" let-rowData>{{rowData['brand']}}</ng-template>
